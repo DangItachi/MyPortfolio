@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Shlesha Paghdar: software development, data analysis, and design."><title>Shlesha Paghdar | Data, Design and Development</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9E0CB; --dot:#CFC3A6; --win:#FBF7EE; --ink:#2E2921; --muted:#665D4D;
+  --sage:#A7B68C; --sage-lt:#D5DDC0; --olive:#3B5A40; --clay:#C8735A; --clay-lt:#EBCBBB; --sand:#E3D6B9;
+  --px:"Pixelify Sans","Courier New",monospace; --sans:"DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);background-image:radial-gradient(var(--dot) 1.5px,transparent 1.5px);background-size:22px 22px;color:var(--ink);font:400 1.05rem/1.65 var(--sans)}
+a{color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--px);font-weight:700;line-height:1.12}
+h2{font-size:clamp(2rem,4.5vw,2.8rem);margin-bottom:.5rem}
+h3{font-size:1.25rem;margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:38rem;margin-bottom:2rem}
+
+nav{position:sticky;top:0;z-index:5;background:var(--win);border-bottom:2px solid var(--ink)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav strong{font:700 1.1rem var(--px)}
+nav a{font:500 1rem var(--px);text-decoration:none;margin-left:1.3rem}
+nav a:hover{color:var(--clay)}
+
+/* windows */
+.win{background:var(--win);border:2px solid var(--ink);border-radius:10px;box-shadow:5px 5px 0 var(--ink);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.win:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.tb{display:flex;align-items:center;gap:6px;padding:.4rem .75rem;border-bottom:2px solid var(--ink);background:var(--sage);font:500 .9rem var(--px)}
+.tb i{width:10px;height:10px;border:2px solid var(--ink);border-radius:50%;background:var(--win)}
+.tb span{margin-left:.4rem}
+.grid > .win:nth-child(3n+2) .tb{background:var(--clay-lt)}
+.grid > .win:nth-child(3n+3) .tb{background:var(--sand)}
+.bd{padding:1.25rem 1.4rem 1.4rem}
+.bd p{color:var(--muted);font-size:.97rem}
+.grid{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.tags li{font:500 .85rem var(--px);background:var(--sage-lt);border:2px solid var(--ink);border-radius:999px;padding:0 .7rem;transition:transform .15s}
+.tags li:nth-child(3n+2){background:var(--clay-lt)}
+.tags li:nth-child(3n+3){background:var(--sand)}
+.tags li:hover{transform:rotate(-4deg) scale(1.08)}
+
+/* hero */
+.hero{padding:4.5rem 0 4rem}
+.hero .wrap{display:grid;gap:3rem;align-items:center}
+@media (min-width:860px){.hero .wrap{grid-template-columns:1.25fr 1fr}}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+.typed{font:500 1.3rem var(--px);color:var(--clay);margin-top:1.1rem;min-height:1.7em}
+.typed::after{content:"";display:inline-block;width:.6em;height:1em;background:var(--clay);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.role{font:500 1rem var(--px);margin-top:1.4rem}
+.hero p{max-width:36rem;margin-top:.8rem;color:var(--muted)}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn{font:500 1.05rem var(--px);text-decoration:none;padding:.6rem 1.3rem;border:2px solid var(--ink);border-radius:8px;background:var(--sage);box-shadow:3px 3px 0 var(--ink);transition:transform .1s,box-shadow .1s}
+.btn.alt{background:var(--win)}
+.btn:hover{background:var(--clay-lt)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+
+.mascot{position:relative;text-align:center;padding:1rem 1rem 1.4rem}
+.mascot svg{width:min(240px,70%);height:auto;shape-rendering:crispEdges;animation:bob 2.4s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.st{fill:#9A9080;opacity:0;animation:rise 2.4s ease-in infinite}
+.st:nth-of-type(2){animation-delay:.8s}.st:nth-of-type(3){animation-delay:1.6s}
+@keyframes rise{0%{transform:translateY(2px);opacity:0}30%{opacity:.9}100%{transform:translateY(-3px);opacity:0}}
+.bubble{display:inline-block;font:500 1rem var(--px);background:var(--sage-lt);border:2px solid var(--ink);border-radius:10px;padding:.2rem .9rem;margin-top:.6rem}
+.dots::after{content:"";animation:dots 1.6s steps(1) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+
+/* ticker */
+.ticker{background:var(--olive);color:var(--sand);border-block:2px solid var(--ink);overflow:hidden;white-space:nowrap;font:500 1.05rem var(--px)}
+.ticker div{display:inline-block;padding:.55rem 0;animation:slide 32s linear infinite}
+.ticker:hover div{animation-play-state:paused}
+.ticker span::after{content:"";display:inline-block;width:8px;height:8px;background:var(--clay);margin:0 1.4rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:4.5rem 0}
+.sub{font:500 1.3rem var(--px);color:var(--clay);margin-bottom:1.2rem}
+.sub + .grid{margin-bottom:3rem}
+.thumb{aspect-ratio:16/9;border:2px dashed var(--ink);border-radius:6px;display:grid;place-items:center;font:500 1.1rem var(--px);background:var(--sage-lt);margin-bottom:1rem}
+.work{background:var(--sage-lt);border-block:2px solid var(--ink)}
+.contact{text-align:center}
+.contact .win{max-width:640px;margin:0 auto}
+.contact .bd{padding:2rem 1.5rem}
+.contact .lead{margin:0 auto 1.2rem}
+.contact a.mail{font:700 clamp(1.1rem,3.8vw,1.8rem) var(--px);color:var(--olive);text-decoration-color:var(--clay);text-decoration-thickness:3px;text-underline-offset:6px;overflow-wrap:anywhere}
+footer{padding:1.75rem 0;text-align:center;font:500 .95rem var(--px);color:var(--muted)}
+
+img.thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--sand);border:2px solid var(--ink);border-radius:6px;margin-bottom:.8rem}
+.view{display:block;width:100%;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:zoom-in}
+.view .btn{display:inline-block;font-size:.95rem;padding:.3rem .9rem;margin-bottom:1rem}
+.view:hover .btn{background:var(--clay-lt)}
+dialog{border:2px solid var(--ink);border-radius:10px;background:var(--win);padding:1rem;width:min(92vw,900px);margin:auto;box-shadow:6px 6px 0 var(--ink)}
+dialog::backdrop{background:rgba(46,41,33,.72)}
+dialog img{display:block;max-width:100%;max-height:72vh;margin:0 auto}
+.lbbar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.9rem;font:500 1rem var(--px)}
+button.btn{cursor:pointer}
+.lbbar .btn{padding:.3rem .9rem;font-size:.95rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.links .btn{font-size:.9rem;padding:.25rem .9rem}
+.js .rv{opacity:0;transform:translateY(24px) scale(.97);transition:opacity .5s,transform .6s cubic-bezier(.3,1.5,.5,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .mascot svg,.st,.ticker div,.typed::after,.dots::after{animation:none}
+  .st{opacity:.7}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap"><strong>Shlesha Paghdar</strong>
+    <div><a href="#work">work</a><a href="#skills">skills</a><a href="#education">education</a><a href="#contact">contact</a></div>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+<div class="wrap">
+<div>
+<h1>All things data, design and development.</h1>
+<p class="typed" id="type" aria-label="With a side of coffee, of course."></p>
+<p class="role">Shlesha Paghdar | Computer Science graduate | Thunder Bay, Ontario</p>
+<p>I build cross-platform apps, turn large datasets into clear insights, and design the interfaces and brand materials around them. I'm looking for roles in software development, data analysis, UI/UX, and technology consulting.</p>
+<div class="btns"><a class="btn" href="#work">View my work</a><a class="btn alt" href="#contact">Get in touch</a></div>
+</div>
+<div class="win" aria-hidden="true">
+<div class="tb"><i></i><i></i><i></i><span>coffee.exe</span></div>
+<div class="mascot">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<rect class="st" x="5" y="4" width="1" height="1"/><rect class="st" x="6" y="3" width="1" height="1"/><rect class="st" x="5" y="2" width="1" height="1"/>
+<rect class="st" x="8" y="4" width="1" height="1"/><rect class="st" x="9" y="3" width="1" height="1"/><rect class="st" x="8" y="2" width="1" height="1"/>
+<rect x="3" y="6" width="9" height="8" fill="#2E2921"/>
+<rect x="4" y="7" width="7" height="6" fill="#C8735A"/>
+<rect x="4" y="7" width="7" height="1" fill="#5B3A29"/>
+<rect x="12" y="8" width="2" height="1" fill="#2E2921"/><rect x="13" y="9" width="1" height="2" fill="#2E2921"/><rect x="12" y="11" width="2" height="1" fill="#2E2921"/>
+<rect x="5" y="9" width="1" height="1" fill="#2E2921"/><rect x="9" y="9" width="1" height="1" fill="#2E2921"/>
+<rect x="4" y="10" width="1" height="1" fill="#EBCBBB"/><rect x="10" y="10" width="1" height="1" fill="#EBCBBB"/>
+<rect x="6" y="11" width="3" height="1" fill="#2E2921"/>
+<rect x="2" y="14" width="11" height="1" fill="#2E2921"/>
+</svg>
+<div><span class="bubble">brewing ideas<span class="dots"></span></span></div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div>
+<span>Python</span><span>React</span><span>React Native</span><span>Node.js</span><span>Figma</span><span>Illustrator</span><span>InDesign</span><span>Photoshop</span><span>MySQL</span><span>Supabase</span><span>Azure</span><span>Pandas</span>
+<span>Python</span><span>React</span><span>React Native</span><span>Node.js</span><span>Figma</span><span>Illustrator</span><span>InDesign</span><span>Photoshop</span><span>MySQL</span><span>Supabase</span><span>Azure</span><span>Pandas</span>
+</div></div>
+
+<section class="rv">
+<div class="wrap">
+<h2>About me</h2>
+<p class="lead" style="margin-bottom:0">I studied Computer Science at Lakehead University with a spectrum of subjects like data science, graphics and design, cloud, and software development. I think about how something works and how it feels to use at the same time. I do my best work on self-directed projects, taking an idea from requirements to a working, well-organized result.</p>
+</div>
+</section>
+
+<section class="rv" style="padding-top:0">
+<div class="wrap">
+<h2>What I do</h2>
+<p class="lead">Four areas I work in, from code to layout.</p>
+<div class="grid">
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>software.js</span></div><div class="bd"><h3>Software development</h3><p>Full-stack and mobile applications built with iterative design and version control.</p><ul class="tags"><li>React</li><li>React Native</li><li>Node.js</li><li>Kotlin</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>data.py</span></div><div class="bd"><h3>Data analysis</h3><p>Cleaning raw data, finding trends, and presenting findings visually.</p><ul class="tags"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Seaborn</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>design.ai</span></div><div class="bd"><h3>UI/UX and graphic design</h3><p>Interface design, brand identity, and print layout, with formal Adobe training.</p><ul class="tags"><li>Figma</li><li>Illustrator</li><li>InDesign</li><li>Photoshop</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>cloud.sql</span></div><div class="bd"><h3>Databases and cloud</h3><p>Relational data storage and cloud-based back ends.</p><ul class="tags"><li>MySQL</li><li>Supabase</li><li>Azure</li></ul></div></div>
+</div>
+</div>
+</section>
+
+<section class="work rv" id="work">
+<div class="wrap">
+<h2>My work</h2>
+<p class="lead" style="color:var(--ink)">Development and data projects, then design work in InDesign + Illustrator and Photoshop. Click any design to see it larger.</p>
+<p class="sub">Development and data</p>
+<div class="grid">
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>dayli.app</span></div><div class="bd"><h3>DayLi, student organizer app</h3><p>A cross-platform app that helps students manage schedules, tasks, and academic goals, with user data stored and retrieved through a database.</p><p style="margin-top:.6rem"><strong>Group project:</strong> built as a team, with everyone contributing across design and development.</p><ul class="tags"><li>React Native</li><li>Expo</li><li>Supabase</li><li>Node.js</li><li>Git</li></ul></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>amazon-eda.py</span></div><div class="bd"><h3>Amazon sales analysis</h3><p>End-to-end exploratory analysis of a large sales dataset. Cleaned missing values and outliers, found sales trends and seasonal demand, and produced visual reports.</p><ul class="tags"><li>Python</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li></ul></div></article>
+</div>
+<p class="sub">InDesign + Illustrator</p>
+<div class="grid two">
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>mehek-brand-package</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/mehek-1.jpg|images/mehek-2.jpg|images/mehek-3.jpg|images/mehek-4.jpg|images/mehek-5.jpg" data-start="3" aria-label="Mehek brand package"><img class="thumb" src="images/mehek-4.jpg" alt="Mehek candle label and box mockup in teal and cream" loading="lazy"><span class="btn">View all 5 images</span></button>
+<h3>Mehek brand package</h3><p>A brand package for Mehek, a line of hand-poured candles inspired by home: logo style guide, colour palette, typography, label and box design, and an advertisement.</p><ul class="tags"><li>Brand identity</li><li>Packaging</li><li>Advertising</li></ul><div class="links"><a class="btn alt" href="pdfs/mehek-brand-package.pdf" target="_blank" rel="noopener">Open PDF</a></div></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>sunpop-branding</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/sunpop-banner.jpg|images/sunpop-card.jpg|images/sunpop-packaging.jpg|images/sunpop-thanks.jpg" data-start="0" aria-label="Sunpop lemonade branding"><img class="thumb" src="images/sunpop-banner.jpg" alt="Sunpop lemonade banner with a glass of lemonade and mint" loading="lazy"><span class="btn">View all 4 images</span></button>
+<h3>Sunpop lemonade branding</h3><p>Branding for Sunpop, a handcrafted lemonade stand: a promotional banner, a brand information card, shipping box packaging (outside and inside), and a thank-you card.</p><ul class="tags"><li>Branding</li><li>Packaging</li><li>Print layout</li></ul><div class="links"><a class="btn alt" href="pdfs/sunpop-banner-and-card.pdf" target="_blank" rel="noopener">Banner and card PDF</a><a class="btn alt" href="pdfs/sunpop-thank-you-card.pdf" target="_blank" rel="noopener">Thank-you card PDF</a></div></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>kiln-poster</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/kiln-poster.jpg" data-start="0" aria-label="Kiln and Co. workshop poster"><img class="thumb" src="images/kiln-poster.jpg" alt="Kiln and Co. pottery and coffee workshop poster" loading="lazy"><span class="btn">View larger</span></button>
+<h3>Throw, Sip &amp; Create</h3><p>Event poster for Kiln &amp; Co.'s pottery and coffee workshop evening.</p><ul class="tags"><li>Poster design</li><li>Event promo</li></ul><div class="links"><a class="btn alt" href="pdfs/kiln-and-co-poster.pdf" target="_blank" rel="noopener">Open PDF</a></div></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>song-cover</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/song-front.jpg|images/song-back.jpg|images/song-spine.jpg" data-start="0" aria-label="A Song Left Unplayed book cover"><img class="thumb" src="images/song-front.jpg" alt="Front cover of A Song Left Unplayed with a guitar and flowing sheet music" loading="lazy"><span class="btn">View all 3 images</span></button>
+<h3>A Song Left Unplayed</h3><p>Full cover design for the novel A Song Left Unplayed: front cover, back cover, and spine.</p><ul class="tags"><li>Cover design</li><li>Print layout</li></ul><div class="links"><a class="btn alt" href="pdfs/a-song-left-unplayed-cover.pdf" target="_blank" rel="noopener">Open PDF</a></div></div></article>
+</div>
+<p class="sub">Photoshop</p>
+<div class="grid two">
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>double-exposure</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/double-exposure.jpg" data-start="0" aria-label="Double exposure portrait"><img class="thumb" src="images/double-exposure.jpg" alt="Profile portrait blended with a galaxy, a jar and a pine forest" loading="lazy"><span class="btn">View larger</span></button>
+<h3>Double exposure portrait</h3><p>A profile silhouette blended with a galaxy, a jar of stars, and a misty pine forest.</p><ul class="tags"><li>Photoshop</li><li>Double exposure</li></ul></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>living-room</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/living-room.jpg" data-start="0" aria-label="Living room composite"><img class="thumb" src="images/living-room.jpg" alt="Living room with brick walls, an orange sofa and large windows" loading="lazy"><span class="btn">View larger</span></button>
+<h3>Living room composite</h3><p>A living room built from separate photos: brick walls, a leather sofa, a rug, a coffee table, framed art, and a window view.</p><ul class="tags"><li>Photoshop</li><li>Compositing</li></ul></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>incredible-india</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/incredible-india.jpg" data-start="0" aria-label="Incredible India collage"><img class="thumb" src="images/incredible-india.jpg" alt="Collage with the Taj Mahal, flag, auto rickshaw and dancer" loading="lazy"><span class="btn">View larger</span></button>
+<h3>Incredible India collage</h3><p>A collage layering landmarks, people, food, the flag, and currency over a textured terracotta background.</p><ul class="tags"><li>Photoshop</li><li>Collage</li></ul></div></article>
+<article class="win"><div class="tb"><i></i><i></i><i></i><span>before-after</span></div><div class="bd">
+<button class="view" type="button" data-imgs="images/before-after.jpg" data-start="0" aria-label="Before and after retouch"><img class="thumb" src="images/before-after.jpg" alt="Weathered white building before and after retouching" loading="lazy"><span class="btn">View larger</span></button>
+<h3>Before and after retouch</h3><p>A side-by-side photo retouch of a weathered white building, cleaning up the damaged plaster and brick.</p><ul class="tags"><li>Photoshop</li><li>Photo retouching</li></ul></div></article>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="skills">
+<div class="wrap">
+<h2>Skills</h2>
+<p class="lead">The tools I reach for.</p>
+<div class="grid">
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>programming</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>Python</li><li>Java</li><li>C</li><li>C++</li><li>Kotlin</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>data</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>Exploratory data analysis</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li><li>MySQL</li><li>RDBMS</li><li>Big data</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>web-and-cloud</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>HTML</li><li>CSS</li><li>React</li><li>WordPress</li><li>Azure Cloud</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>mobile-backend</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>React Native</li><li>Expo</li><li>Node.js</li><li>Supabase</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>design</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>Figma</li><li>Adobe Illustrator</li><li>Adobe InDesign</li><li>Adobe Photoshop</li></ul></div></div>
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>tools-concepts</span></div><div class="bd"><ul class="tags" style="margin-top:0"><li>Git</li><li>OpenGL</li><li>Microsoft Office</li><li>Object-oriented programming</li><li>Data structures</li><li>Software development lifecycle</li><li>Microeconomics</li></ul></div></div>
+</div>
+</div>
+</section>
+
+<section class="rv" id="education" style="padding-top:0">
+<div class="wrap">
+<h2>Education</h2>
+<div class="win" style="max-width:640px"><div class="tb"><i></i><i></i><i></i><span>education.txt</span></div><div class="bd"><h3>Honours Bachelor of Science, Computer Science</h3><p>Lakehead University, Thunder Bay, Ontario</p><p>Graduated September 2026</p></div></div>
+</div>
+</section>
+
+<section class="contact rv" id="contact" style="padding-top:0">
+<div class="wrap">
+<div class="win"><div class="tb"><i></i><i></i><i></i><span>mailbox.exe</span></div><div class="bd">
+<h2>Contact</h2>
+<p class="lead">Have a role, project, or idea? I would like to hear about it.</p>
+<a class="mail" href="mailto:shlesha6104@gmail.com">shlesha6104@gmail.com</a>
+</div></div>
+</div>
+</section>
+</main>
+
+<footer>Shlesha Paghdar, Thunder Bay, Ontario</footer>
+
+<dialog id="lb" aria-label="Design viewer"><img alt=""><div class="lbbar"><span class="cap"></span><span><button class="btn prev" type="button">Prev</button> <button class="btn next" type="button">Next</button> <button class="btn x" type="button">Close</button></span></div></dialog>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var t=document.getElementById('type'),txt='With a side of coffee, of course.';
+  if(reduce){t.textContent=txt}else{var i=0;setTimeout(function n(){t.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(n,55)},600)}
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+  var lb=document.getElementById('lb'),li=lb.querySelector('img'),cap=lb.querySelector('.cap'),pv=lb.querySelector('.prev'),nx=lb.querySelector('.next'),list=[],n=0,ttl='';
+  function show(){li.src=list[n];li.alt=ttl+', image '+(n+1)+' of '+list.length;cap.textContent=ttl+(list.length>1?'  '+(n+1)+' / '+list.length:'');pv.hidden=nx.hidden=list.length<2}
+  document.querySelectorAll('.view').forEach(function(b){b.addEventListener('click',function(){list=b.dataset.imgs.split('|');n=+b.dataset.start||0;ttl=b.getAttribute('aria-label');show();lb.showModal()})});
+  pv.onclick=function(){n=(n+list.length-1)%list.length;show()};
+  nx.onclick=function(){n=(n+1)%list.length;show()};
+  lb.querySelector('.x').onclick=function(){lb.close()};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+  document.addEventListener('keydown',function(e){if(!lb.open)return;if(e.key==='ArrowLeft'&&list.length>1)pv.click();if(e.key==='ArrowRight'&&list.length>1)nx.click()});
+})();
+</script>
+</body>
+</html>
